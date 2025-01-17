@@ -63,7 +63,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000',
+    'http://localhost',
     'https://group44-web-apps-ec22668.apps.a.comp-teach.qmul.ac.uk',
 ]
 
