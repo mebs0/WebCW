@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+</head>
+<body>
+    <!-- Login Section -->
+    <h2 class="title">Login</h2>
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="loginButton">Login</button>
+    </form>
+
+    <!-- Inline CSS -->
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #36454F; /* Charcoal background */
+            color: white; /* White text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+
+        title {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .form {
+            background-color: #2C3E50; /* Dark grey background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+            .form p {
+                margin-bottom: 15px;
+            }
+
+            .form label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #FFFFFF; /* White text for labels */
+            }
+
+            .form input[type="text"],
+            .form input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                box-sizing: border-box;
+                color: #36454F; /* Text color inside inputs */
+                background-color: #FFFFFF; /* White background for inputs */
+            }
+
+            .errorlist.nonfield {
+                display: block;
+                list-style-type: none; /* Remove the bullet point */
+                font-size: 15px;
+                color: #dcdcdc;
+                text-align: center;
+                padding: 0; /* Remove default padding */
+            }
+
+            .form .loginButton {
+                width: 100%;
+                background-color: #4682B4; /* Steel blue button */
+                color: white; /* White text on button */
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin-top: 5px;
+            }
+
+                .form button:hover {
+                    background-color: #5A9BD4; /* Lighter steel blue on hover */
+                }
+
+            .form input:focus {
+                outline: none;
+                border-color: #4682B4; /* Steel blue border on focus */
+                box-shadow: 0 0 5px rgba(70, 130, 180, 0.5); /* Light steel blue glow */
+            }
+    </style>
+</body>
+</html>

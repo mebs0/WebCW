@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <!-- Registration Section -->
+    <h2 class="title">Register</h2>
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="registerButton">Register</button>
+    </form>
+
+    <!-- Inline CSS -->
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #36454F; /* Charcoal background */
+            color: white; /* White text */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 15px;
+            color: white; /* White text for the title */
+        }
+
+        .form {
+            background-color: #2C3E50; /* Dark grey form background */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+            .form p {
+                margin-bottom: 15px;
+            }
+
+            .form label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #FFFFFF; /* White text for labels */
+            }
+
+            .form input[type="text"],
+            .form input[type="email"],
+            .form input[type="password"],
+            .form input[type="date"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                box-sizing: border-box;
+                color: #36454F; /* Charcoal text inside inputs */
+                background-color: #FFFFFF; /* White background for inputs */
+            }
+
+            .form .helptext {
+                /* This is the 'required' text under Username */
+                display: block;
+                padding-top: 7px; /* Add spacing above the help text */
+                font-size: 15px;
+                color: #dcdcdc;
+            }
+
+            .form ul {
+                /* These are the bullet points under password */
+                margin-top: 10px;
+                padding: 10px;
+                color: #dcdcdc;
+                font-size: 17px;
+            }
+
+
+            .errorlist li{
+                font-weight: bold; /* This errorlist text appears when the passwords dont match */
+                color: #FF6F61; /* red for error text */
+            }
+
+            .form button {
+                width: 100%;
+                background-color: #4682B4; /* Steel blue button */
+                color: white; /* White text on button */
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                font-size: 20px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                .form button:hover {
+                    background-color: #5A9BD4; /* Lighter steel blue on hover */
+                }
+
+            .form input:focus {
+                outline: none;
+                border-color: #4682B4; /* Steel blue border on focus */
+                box-shadow: 0 0 5px rgba(70, 130, 180, 0.5); /* Light steel blue glow */
+            }
+
+        /* Custom date picker styling */
+        input[type="date"] {
+            color: #555;
+        }
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                filter: invert(0.5);
+                cursor: pointer;
+            }
+    </style>
+</body>
+</html>
